@@ -1,0 +1,14 @@
+data={}
+contact_number=int(input("enter the no of contacts "))
+for i in range(contact_number):
+    key=input()
+    value=int(input())
+    data[key]=value
+print(data)
+a=input()
+for i in data:
+    if i == a:
+        print("in contact")
+        break
+else:
+    print("not contact")

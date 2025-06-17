@@ -1,0 +1,13 @@
+data={}
+for i in range(3):
+    key=int(input())
+    value=[]
+    for i in range(3):
+        value.append(input())
+    data[key]=value
+print(data)
+a=int(input())
+if a in data:
+    print(data[a])
+else:
+    print("not contact")

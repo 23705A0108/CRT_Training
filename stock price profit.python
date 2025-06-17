@@ -1,0 +1,10 @@
+stock_price=[7,1,3,4,2,6,5]
+max_profit=0
+for buy in range(len(stock_price)):
+    for sell in range(buy+1,len(stock_price)):
+        profit=stock_price[sell]-stock_price[buy]
+        if profit>max_profit:
+            buy_day=buy+1
+            sell_day=sell+1
+            max_profit=profit
+print("you can buy on",buy_day,"and sell on",sell_day)

@@ -1,0 +1,73 @@
+class Node:
+    def __init__(self,number):
+        self.data=number
+        self.next=None
+class linked_list:
+    def __init__(self):
+        self.head=None
+    def insertion(self,data):
+        new_node=Node(data)
+        if self.head==None:
+            self.head=new_node
+            print(self.head)
+            return
+        temp=self.head
+        while temp.next!=None:
+            temp=temp.next
+        temp.next=new_node
+    def insertion_start(self,data):
+        new_node=Node(data)
+        temp=self.head
+        self.head=new_node
+        new_node.next=temp
+    def insertion_middle(self,data,position):
+        new_node=Node(data)
+        current=1
+        pointer=self.head
+        while current <=position-1:
+            pointer=pointer.next
+            current=current+1
+        temp=pointer.next
+        pointer.next=new_node
+        new_node.next=temp
+    def delete_end(self):
+        pointer=self.head
+        while pointer.next!=None:
+            temp=pointer
+            pointer=pointer.next
+        temp.next=None
+    def delete_start(self):
+        pointer=self.head
+        self.head=pointer.next
+    def delete_middle(self,position):
+        current=1
+        pointer=self.head
+        
+        while current<=position:
+            temp=pointer
+            pointer=pointer.next
+            current=current+1
+        temp.next=pointer.next
+    def traversal(self):
+        temp=self.head
+        while temp.next:
+            print(temp.data,end="->")
+            temp=temp.next
+        print(temp.data)
+obj = linked_list()
+obj.insertion(10)
+obj.insertion(20)
+obj.insertion(30)
+obj.insertion(40)
+obj.insertion(50)
+obj.insertion(60)
+obj.insertion_start(70)
+obj.traversal()
+obj.insertion_middle(80,4)
+obj.traversal()
+obj.delete_end()
+obj.traversal()
+obj.delete_start()
+obj.traversal()
+obj.delete_middle(3)
+obj.traversal()

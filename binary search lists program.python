@@ -1,0 +1,18 @@
+array1=list(map(int,input().split()))
+array2=list(map(int,input().split()))
+for element in array2:
+    key=element
+    left=0
+    right=len(array1)-1
+    while left<=right:
+        mid=(left+right)//2
+        if key==array1[mid]:
+            break
+        if key<array1[mid]:
+            left=mid+1
+        if key>array1[mid]:
+            right=mid-1
+    if key==array1[mid]:
+        print("element found at",mid)
+    else:
+        print("element not found")

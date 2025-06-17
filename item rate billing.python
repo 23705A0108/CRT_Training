@@ -1,0 +1,11 @@
+prices={"banana":40,"apple":60,"drink":100,"pen":5,"milk":20}
+item_taken=list(map(str , input().split()))
+bill_cost=0
+for i in range(len(item_taken)):
+    item=item_taken[i]
+    print(item)
+    if item in prices:
+        
+        bill_cost=bill_cost+prices[item]
+        print(bill_cost,item)
+print(bill_cost)

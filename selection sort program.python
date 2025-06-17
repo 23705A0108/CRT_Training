@@ -1,0 +1,13 @@
+list=list(map(int,input().split()))
+n=len(list)
+for i in range(n):
+    mini=list[i]
+    index=i
+    for j in range(i+1,n):
+        if list[j]<mini:
+            mini=list[j]
+            index=j
+    temp=list[i]
+    list[i]=mini
+    list[index]=temp
+print(list)

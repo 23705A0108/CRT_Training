@@ -1,0 +1,15 @@
+array=list(map(int,input().split()))
+units=int(input("enter units per person"))
+persons=int(input("enter the persons"))
+total_units=units*persons
+print("total",total_units)
+count=0
+sum=0
+for i in range(len(array)):
+    a=array[i]
+    sum+=a
+    count+=1
+    if (sum>=total_units):
+        break
+print(count)
+print(sum)

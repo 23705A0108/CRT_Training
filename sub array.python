@@ -1,0 +1,7 @@
+array=list(map(int,input().split()))
+sub_array=[]
+for i in range(len(array)):
+    for j in range(i,len(array)):
+        sub_array.append(array[j])
+        print(sub_array)
+    sub_array = []
